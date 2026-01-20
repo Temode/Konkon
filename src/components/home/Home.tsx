@@ -5,6 +5,7 @@ import FeaturedProperties from './sections/featured-properties';
 import Features from './sections/features';
 import Testimonials from './sections/testimonials';
 import CTA from './sections/cta';
+import Footer from '../shared/footer';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Features />
       <Testimonials />
       <CTA />
+      <Footer />
     </div>
   );
 }
