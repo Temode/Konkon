@@ -6,9 +6,10 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background-color: rgba(20, 20, 23, 0.8);
+  background-color: var(--header-bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .container {
@@ -52,7 +53,7 @@
 .logoText {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: var(--text-primary);
   transition: color 0.3s ease;
 }
 
@@ -74,7 +75,7 @@
 }
 
 .navLink {
-  color: #d1d5db;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.3s ease;
   display: flex;
@@ -83,7 +84,7 @@
 }
 
 .navLink:hover {
-  color: white;
+  color: var(--text-primary);
 }
 
 /* Auth Buttons */
@@ -101,13 +102,13 @@
 
 .loginButton {
   padding: 0.5rem 1rem;
-  color: #d1d5db;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .loginButton:hover {
-  color: white;
+  color: var(--text-primary);
 }
 
 .signupButton {
@@ -132,7 +133,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: white;
+  color: var(--text-primary);
   background: none;
   border: none;
   cursor: pointer;
@@ -147,7 +148,7 @@
 /* Mobile Menu */
 .mobileMenu {
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
 }
 
 @media (min-width: 768px) {
@@ -163,7 +164,7 @@
 }
 
 .mobileNavLink {
-  color: #d1d5db;
+  color: var(--text-secondary);
   text-decoration: none;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
@@ -173,11 +174,11 @@
 }
 
 .mobileNavLink:hover {
-  color: white;
+  color: var(--text-primary);
 }
 
 .mobileAuthButtons {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
   margin-top: 0.5rem;
   display: flex;
@@ -188,15 +189,15 @@
 .mobileLoginButton {
   padding: 0.625rem 1rem;
   text-align: center;
-  color: #d1d5db;
+  color: var(--text-secondary);
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color-light);
   border-radius: 12px;
   transition: color 0.3s ease;
 }
 
 .mobileLoginButton:hover {
-  color: white;
+  color: var(--text-primary);
 }
 
 .mobileSignupButton {
@@ -207,4 +208,18 @@
   border-radius: 12px;
   font-weight: 500;
   text-decoration: none;
+}
+
+/* Mobile Theme Toggle */
+.mobileThemeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.mobileThemeLabel {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
 }

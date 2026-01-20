@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
+import { ThemeToggle } from '../../../ui/theme-toggle';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -34,6 +35,7 @@ export default function Header() {
 
           {/* Auth Buttons */}
           <div className={styles.authButtons}>
+            <ThemeToggle />
             <Link to="/connexion" className={styles.loginButton}>
               Connexion
             </Link>
@@ -78,6 +80,10 @@ export default function Header() {
                 Devenir démarcheur
               </Link>
               <div className={styles.mobileAuthButtons}>
+                <div className={styles.mobileThemeToggle}>
+                  <span className={styles.mobileThemeLabel}>Thème</span>
+                  <ThemeToggle />
+                </div>
                 <Link
                   to="/connexion"
                   className={styles.mobileLoginButton}

@@ -1,15 +1,10 @@
 /* Konkon Design System - Variables CSS */
 :root {
-  /* Dark Theme */
-  --dark-900: #0D0D0F;
-  --dark-800: #141417;
-  --dark-700: #1A1A1D;
-
-  /* Primaire - Vert Konkon */
+  /* Primaire - Vert Konkon (partagé) */
   --primary-500: #14A800;
   --primary-600: #0F8C00;
 
-  /* Accents */
+  /* Accents (partagés) */
   --accent-cyan: #00D4FF;
   --accent-orange: #FF6B00;
   --accent-red: #EF4444;
@@ -20,14 +15,62 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--dark-900);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Theme (par défaut) */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #0D0D0F;
+  --bg-secondary: #141417;
+  --bg-tertiary: #1A1A1D;
+
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --border-color: rgba(255, 255, 255, 0.05);
+  --border-color-light: rgba(255, 255, 255, 0.1);
+
+  --header-bg: rgba(20, 20, 23, 0.8);
+  --card-bg: rgba(20, 20, 23, 0.5);
+
+  color-scheme: dark;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9FAFB;
+  --bg-tertiary: #F3F4F6;
+
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6B7280;
+  --text-muted: #9CA3AF;
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-light: rgba(0, 0, 0, 0.12);
+
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --card-bg: rgba(255, 255, 255, 0.8);
+
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* Variables legacy pour compatibilité */
+:root {
+  --dark-900: var(--bg-primary);
+  --dark-800: var(--bg-secondary);
+  --dark-700: var(--bg-tertiary);
 }
 
 * {
@@ -39,7 +82,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--dark-900);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Utility classes pour Konkon */
