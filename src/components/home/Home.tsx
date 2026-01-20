@@ -3,6 +3,8 @@ import HeroSection from './sections/hero-section/HeroSection';
 import HowItWorks from './sections/how-it-works';
 import FeaturedProperties from './sections/featured-properties';
 import Features from './sections/features';
+import Testimonials from './sections/testimonials';
+import CTA from './sections/cta';
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <HowItWorks />
       <FeaturedProperties />
       <Features />
+      <Testimonials />
+      <CTA />
     </div>
   );
 }
