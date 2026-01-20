@@ -1,5 +1,6 @@
 import Header from './sections/header/Header';
 import HeroSection from './sections/hero-section/HeroSection';
+import HowItWorks from './sections/how-it-works';
 import FeaturedProperties from './sections/featured-properties';
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <Header />
       <HeroSection />
+      <HowItWorks />
       <FeaturedProperties />
     </div>
   );
