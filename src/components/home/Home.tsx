@@ -2,6 +2,7 @@ import Header from './sections/header/Header';
 import HeroSection from './sections/hero-section/HeroSection';
 import HowItWorks from './sections/how-it-works';
 import FeaturedProperties from './sections/featured-properties';
+import Features from './sections/features';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <HowItWorks />
       <FeaturedProperties />
+      <Features />
     </div>
   );
 }
