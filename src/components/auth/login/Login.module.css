@@ -1,0 +1,335 @@
+/* Login.module.css */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  padding: 2rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Decorative Background */
+.decorCircle1 {
+  position: fixed;
+  top: -10%;
+  right: -5%;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(circle, rgba(20, 168, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorCircle2 {
+  position: fixed;
+  bottom: -10%;
+  left: -5%;
+  width: 35rem;
+  height: 35rem;
+  background: radial-gradient(circle, rgba(20, 168, 0, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card */
+.card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 28rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .card {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon span {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.logoText {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-tertiary);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  padding-left: 3rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(20, 168, 0, 0.1);
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+.input:focus + .inputIcon {
+  color: var(--primary-500);
+}
+
+/* Remember & Forgot */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -0.5rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox input {
+  width: 1.125rem;
+  height: 1.125rem;
+  cursor: pointer;
+  accent-color: var(--primary-500);
+}
+
+.checkbox label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.forgotLink {
+  font-size: 0.875rem;
+  color: var(--primary-500);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgotLink:hover {
+  color: var(--primary-600);
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(20, 168, 0, 0.25);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.dividerText {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+/* Google Button */
+.googleButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.googleButton:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-tertiary);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.footerLink {
+  color: var(--primary-500);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: var(--primary-600);
+  text-decoration: underline;
+}
+
+/* Back to Home */
+.backLink {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.backLink:hover {
+  color: var(--primary-500);
+  border-color: var(--primary-500);
+  transform: translateX(-4px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .backLink {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.625rem 1rem;
+  }
+}
