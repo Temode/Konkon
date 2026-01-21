@@ -1,154 +1,290 @@
-/* HowItWorks.module.css */
+/* HowItWorks.module.css - Premium SaaS Design */
 
 .section {
-  padding: 5rem 0;
+  position: relative;
+  padding: 7rem 0;
   background-color: var(--bg-secondary);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Subtle background pattern */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(20, 168, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(0, 212, 255, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .container {
+  position: relative;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
+  z-index: 1;
 }
 
 /* Header */
 .header {
   text-align: center;
   margin-bottom: 4rem;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--decor-primary-soft);
-  border: 1px solid var(--decor-primary-border);
+  padding: 0.625rem 1.25rem;
+  background: rgba(20, 168, 0, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(20, 168, 0, 0.2);
   border-radius: 9999px;
   color: var(--primary-500);
   font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 20px rgba(20, 168, 0, 0.08),
+    0 0 0 1px rgba(20, 168, 0, 0.05) inset;
+}
+
+.badge:hover {
+  background: rgba(20, 168, 0, 0.12);
+  border-color: rgba(20, 168, 0, 0.3);
+  box-shadow:
+    0 8px 30px rgba(20, 168, 0, 0.15),
+    0 0 0 1px rgba(20, 168, 0, 0.1) inset;
+  transform: translateY(-2px);
+}
+
+.badge svg {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.badge:hover svg {
+  transform: rotate(10deg) scale(1.1);
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .title {
-    font-size: 2.5rem;
-  }
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--text-primary) 70%,
+    var(--primary-500) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .description {
-  font-size: 1rem;
-  color: var(--text-tertiary);
-  max-width: 42rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--text-secondary);
+  max-width: 48rem;
   margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 /* Steps Grid */
 .stepsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .stepsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .stepsGrid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 }
 
 /* Step Card */
 .stepCard {
   position: relative;
-  background-color: var(--card-bg);
-  padding: 2rem 1.5rem;
+  background: var(--card-bg);
+  padding: 2.5rem 2rem;
   border-radius: 1.5rem;
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* Staggered animation delays */
+.stepCard:nth-child(1) { animation-delay: 0.1s; }
+.stepCard:nth-child(2) { animation-delay: 0.2s; }
+.stepCard:nth-child(3) { animation-delay: 0.3s; }
+.stepCard:nth-child(4) { animation-delay: 0.4s; }
+
+/* Gradient overlay on hover */
+.stepCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 168, 0, 0.03) 0%,
+    transparent 50%,
+    rgba(0, 212, 255, 0.02) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  border-radius: 1.5rem;
+}
+
+.stepCard:hover::before {
+  opacity: 1;
 }
 
 .stepCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 20px 60px rgba(20, 168, 0, 0.12),
+    0 0 0 1px var(--primary-500) inset,
+    0 0 40px rgba(20, 168, 0, 0.1);
   border-color: var(--primary-500);
 }
 
 /* Step Number */
 .stepNumber {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--decor-primary-soft);
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(20, 168, 0, 0.1);
   line-height: 1;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
+  margin-bottom: 1.25rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.02em;
 }
 
 .stepCard:hover .stepNumber {
-  color: var(--decor-primary-border);
+  color: rgba(20, 168, 0, 0.15);
+  transform: scale(1.05);
 }
 
 /* Step Icon */
 .stepIcon {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, var(--decor-primary-soft), rgba(var(--primary-rgb), 0.08));
-  border: 1px solid var(--decor-primary-border);
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(20, 168, 0, 0.08), rgba(20, 168, 0, 0.04));
+  border: 1px solid rgba(20, 168, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(20, 168, 0, 0.08);
+  z-index: 1;
+}
+
+/* Shimmer effect on icon container */
+.stepIcon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stepCard:hover .stepIcon {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(-5deg);
   background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   border-color: var(--primary-500);
+  box-shadow:
+    0 10px 40px rgba(20, 168, 0, 0.3),
+    0 0 0 4px rgba(20, 168, 0, 0.1);
+}
+
+.stepCard:hover .stepIcon::before {
+  opacity: 1;
 }
 
 .stepIcon svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   color: var(--primary-500);
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .stepCard:hover .stepIcon svg {
   color: white;
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }
 
 /* Step Content */
 .stepTitle {
-  font-size: 1.25rem;
+  position: relative;
+  font-size: 1.375rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.stepCard:hover .stepTitle {
+  color: var(--primary-500);
 }
 
 .stepDescription {
-  font-size: 0.875rem;
+  position: relative;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  z-index: 1;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepCard:hover .stepDescription {
+  color: var(--text-primary);
 }
 
 /* Arrow Between Steps (Desktop only) */
@@ -157,10 +293,6 @@
 }
 
 @media (min-width: 1024px) {
-  .stepCard {
-    position: relative;
-  }
-
   .arrow {
     display: block;
     position: absolute;
@@ -171,6 +303,15 @@
     height: 1.5rem;
     color: var(--primary-500);
     z-index: 10;
+    opacity: 0.4;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulse-subtle 2s ease-in-out infinite;
+  }
+
+  .stepCard:hover .arrow {
+    opacity: 1;
+    transform: translateY(-50%) translateX(4px);
+    filter: drop-shadow(0 0 8px rgba(20, 168, 0, 0.5));
   }
 
   /* Hide arrow on last card */
@@ -180,26 +321,66 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1023px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+}
+
 @media (max-width: 767px) {
+  .section {
+    padding: 4rem 0;
+  }
+
   .stepCard {
-    padding: 1.5rem 1.25rem;
+    padding: 2rem 1.5rem;
   }
 
   .stepNumber {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .stepIcon {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .stepIcon svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .stepTitle {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+  }
+
+  .stepDescription {
+    font-size: 0.875rem;
+  }
+}
+
+/* Animation keyframe (if not in global animations.css) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
   }
 }
