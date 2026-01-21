@@ -65,6 +65,7 @@ export default function HeroSection() {
                 value={searchType}
                 onChange={(e) => setSearchType(e.target.value as 'location' | 'vente')}
                 className={styles.searchSelect}
+                aria-label="Type de recherche: Location ou Achat"
               >
                 <option value="location">Location</option>
                 <option value="vente">Achat</option>
