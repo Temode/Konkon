@@ -1,3 +1,6 @@
+/* Import animations */
+@import './styles/animations.css';
+
 /* Konkon Design System - Variables CSS */
 :root {
   /* Primaire - Vert Konkon (partagé) */

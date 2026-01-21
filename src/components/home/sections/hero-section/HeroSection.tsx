@@ -27,6 +27,7 @@ export default function HeroSection() {
       <div className={styles.background} />
       <div className={styles.decorCircle1} />
       <div className={styles.decorCircle2} />
+      <div className={styles.decorCircle3} />
 
       <div className={styles.container}>
         <div className={styles.content}>
