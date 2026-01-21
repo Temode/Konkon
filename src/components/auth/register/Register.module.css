@@ -17,7 +17,7 @@
   left: -5%;
   width: 30rem;
   height: 30rem;
-  background: radial-gradient(circle, rgba(20, 168, 0, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--decor-primary-soft) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   pointer-events: none;
@@ -30,7 +30,7 @@
   right: -5%;
   width: 35rem;
   height: 35rem;
-  background: radial-gradient(circle, rgba(20, 168, 0, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.05) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   pointer-events: none;
@@ -47,13 +47,9 @@
   border: 1px solid var(--border-color);
   border-radius: 2rem;
   padding: 3rem 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xl);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-}
-
-[data-theme="light"] .card {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
 }
 
 /* Header */
@@ -156,7 +152,7 @@
 
 .roleCard.selected {
   border-color: var(--primary-500);
-  background: linear-gradient(135deg, rgba(20, 168, 0, 0.1), rgba(15, 140, 0, 0.05));
+  background: linear-gradient(135deg, var(--decor-primary-soft), rgba(var(--primary-rgb), 0.05));
 }
 
 .roleIcon {
@@ -246,7 +242,7 @@
 
 .input:focus {
   border-color: var(--primary-500);
-  box-shadow: 0 0 0 3px rgba(20, 168, 0, 0.1);
+  box-shadow: 0 0 0 3px var(--decor-primary-soft);
 }
 
 .inputIcon {
@@ -338,7 +334,7 @@
 
 .submitButton:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(20, 168, 0, 0.25);
+  box-shadow: var(--shadow-primary);
 }
 
 .submitButton:disabled {

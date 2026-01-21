@@ -23,8 +23,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(20, 168, 0, 0.1);
-  border: 1px solid rgba(20, 168, 0, 0.2);
+  background-color: var(--decor-primary-soft);
+  border: 1px solid var(--decor-primary-border);
   border-radius: 9999px;
   color: var(--primary-500);
   font-size: 0.875rem;
@@ -86,12 +86,8 @@
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary-500);
-}
-
-[data-theme="light"] .featureCard:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* Icon Wrapper */
@@ -109,7 +105,7 @@
 
 .featureCard:hover .iconWrapper {
   transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(20, 168, 0, 0.3);
+  box-shadow: var(--shadow-primary);
 }
 
 .iconWrapper svg {

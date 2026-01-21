@@ -23,8 +23,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(20, 168, 0, 0.1);
-  border: 1px solid rgba(20, 168, 0, 0.2);
+  background-color: var(--decor-primary-soft);
+  border: 1px solid var(--decor-primary-border);
   border-radius: 9999px;
   color: var(--primary-500);
   font-size: 0.875rem;
@@ -78,13 +78,9 @@
 }
 
 .card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
   border-color: var(--primary-500);
-}
-
-[data-theme="light"] .card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* Rating Stars */
@@ -97,8 +93,8 @@
 .star {
   width: 1.25rem;
   height: 1.25rem;
-  color: #f59e0b;
-  fill: #f59e0b;
+  color: var(--accent-amber);
+  fill: var(--accent-amber);
 }
 
 /* Quote */

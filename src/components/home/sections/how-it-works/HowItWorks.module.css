@@ -23,8 +23,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(20, 168, 0, 0.1);
-  border: 1px solid rgba(20, 168, 0, 0.2);
+  background-color: var(--decor-primary-soft);
+  border: 1px solid var(--decor-primary-border);
   border-radius: 9999px;
   color: var(--primary-500);
   font-size: 0.875rem;
@@ -87,34 +87,22 @@
 
 .stepCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary-500);
-}
-
-[data-theme="light"] .stepCard:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* Step Number */
 .stepNumber {
   font-size: 3rem;
   font-weight: bold;
-  color: rgba(20, 168, 0, 0.1);
+  color: var(--decor-primary-soft);
   line-height: 1;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
 
-[data-theme="light"] .stepNumber {
-  color: rgba(20, 168, 0, 0.15);
-}
-
 .stepCard:hover .stepNumber {
-  color: rgba(20, 168, 0, 0.2);
-}
-
-[data-theme="light"] .stepCard:hover .stepNumber {
-  color: rgba(20, 168, 0, 0.25);
+  color: var(--decor-primary-border);
 }
 
 /* Step Icon */
@@ -122,8 +110,8 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(20, 168, 0, 0.1), rgba(15, 140, 0, 0.1));
-  border: 1px solid rgba(20, 168, 0, 0.2);
+  background: linear-gradient(135deg, var(--decor-primary-soft), rgba(var(--primary-rgb), 0.08));
+  border: 1px solid var(--decor-primary-border);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -28,7 +28,7 @@
   left: 2.5rem;
   width: 18rem;
   height: 18rem;
-  background-color: rgba(20, 168, 0, 0.1);
+  background-color: var(--decor-primary-soft);
   border-radius: 9999px;
   filter: blur(60px);
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -40,7 +40,7 @@
   right: 2.5rem;
   width: 24rem;
   height: 24rem;
-  background-color: rgba(20, 168, 0, 0.05);
+  background-color: rgba(var(--primary-rgb), 0.05);
   border-radius: 9999px;
   filter: blur(60px);
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -67,8 +67,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: rgba(20, 168, 0, 0.1);
-  border: 1px solid rgba(20, 168, 0, 0.2);
+  background-color: var(--decor-primary-soft);
+  border: 1px solid var(--decor-primary-border);
   border-radius: 9999px;
   color: var(--primary-500);
   font-size: 0.875rem;
@@ -126,7 +126,7 @@
   padding: 0.75rem;
   border-radius: 1rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-xl);
   margin-bottom: 1rem;
 }
 
@@ -203,7 +203,7 @@
 
 .searchButton:hover {
   background: linear-gradient(to right, var(--primary-600), var(--primary-500));
-  box-shadow: 0 10px 25px rgba(20, 168, 0, 0.2);
+  box-shadow: var(--shadow-primary);
 }
 
 .searchButton svg {
@@ -279,8 +279,8 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(20, 168, 0, 0.2), rgba(15, 140, 0, 0.2));
-  border: 1px solid rgba(20, 168, 0, 0.2);
+  background: linear-gradient(135deg, var(--decor-primary-border), rgba(var(--primary-rgb), 0.15));
+  border: 1px solid var(--decor-primary-border);
   display: flex;
   align-items: center;
   justify-content: center;
