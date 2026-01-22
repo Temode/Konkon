@@ -83,16 +83,14 @@
   margin-bottom: 1.25rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary) 0%,
-    var(--text-primary) 70%,
-    var(--primary-500) 100%
-  );
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .description {
@@ -182,35 +180,42 @@
 
 /* Step Number */
 .stepNumber {
-  position: relative;
-  font-size: 3.5rem;
+  position: absolute;
+  top: -0.75rem;
+  left: -0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--primary-500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.125rem;
   font-weight: 900;
-  color: rgba(20, 168, 0, 0.1);
-  line-height: 1;
-  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 25px rgba(20, 168, 0, 0.3);
+  z-index: 10;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  letter-spacing: -0.02em;
 }
 
 .stepCard:hover .stepNumber {
-  color: rgba(20, 168, 0, 0.15);
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(20, 168, 0, 0.4);
 }
 
 /* Step Icon */
 .stepIcon {
   position: relative;
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 1.25rem;
-  background: linear-gradient(135deg, rgba(20, 168, 0, 0.08), rgba(20, 168, 0, 0.04));
-  border: 1px solid rgba(20, 168, 0, 0.15);
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-cyan));
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(20, 168, 0, 0.08);
+  box-shadow: 0 8px 25px rgba(20, 168, 0, 0.25);
   z-index: 1;
 }
 
@@ -244,15 +249,14 @@
 }
 
 .stepIcon svg {
-  width: 2rem;
-  height: 2rem;
-  color: var(--primary-500);
+  width: 1.75rem;
+  height: 1.75rem;
+  color: white;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
 
 .stepCard:hover .stepIcon svg {
-  color: white;
   transform: scale(1.1);
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }

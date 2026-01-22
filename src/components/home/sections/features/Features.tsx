@@ -1,52 +1,57 @@
-import { Search, ShieldCheck, CreditCard, FileText, MessageSquare, LayoutDashboard, Sparkles } from 'lucide-react';
+import { Search, ShieldCheck, CreditCard, FileText, MessageCircle, LayoutDashboard, Check } from 'lucide-react';
 import styles from './Features.module.css';
 
 const features = [
   {
     icon: Search,
     title: 'Recherche avancée',
-    description: 'Filtrez par quartier, prix, type et caractéristiques',
+    description: 'Filtres par quartier, prix, type de bien, nombre de pièces. Vue carte ou liste avec photos HD.',
+    items: ['Filtres multicritères', 'Vue carte interactive', 'Alertes personnalisées'],
   },
   {
     icon: ShieldCheck,
     title: 'Vérification KYC',
-    description: 'Tous les démarcheurs sont vérifiés et certifiés',
+    description: 'Tous les démarcheurs passent par un processus de vérification d\'identité rigoureux.',
+    items: ['Vérification CNI', 'Badge "Vérifié"', 'Notation et avis'],
   },
   {
     icon: CreditCard,
     title: 'Paiement sécurisé',
-    description: 'Transactions protégées par cryptage bancaire',
+    description: 'Payez votre loyer ou avance via Orange Money. Répartition automatique entre les parties.',
+    items: ['Orange Money intégré', 'Répartition automatique', 'Historique complet'],
   },
   {
     icon: FileText,
     title: 'Reçus automatiques',
-    description: 'Justificatifs générés pour chaque transaction',
+    description: 'Un reçu PDF professionnel est généré automatiquement après chaque paiement.',
+    items: ['PDF téléchargeable', 'Envoi par email', 'Valeur légale'],
   },
   {
-    icon: MessageSquare,
+    icon: MessageCircle,
     title: 'Messagerie intégrée',
-    description: 'Communiquez facilement avec les démarcheurs',
+    description: 'Communiquez directement avec les démarcheurs sans partager vos coordonnées personnelles.',
+    items: ['Chat en temps réel', 'Partage de photos', 'Notifications push'],
   },
   {
     icon: LayoutDashboard,
-    title: 'Dashboard complet',
-    description: 'Suivez vos favoris, messages et visites',
+    title: 'Tableaux de bord',
+    description: 'Gérez vos annonces, paiements et conversations depuis un espace dédié et intuitif.',
+    items: ['Vue d\'ensemble', 'Statistiques détaillées', 'Gestion simplifiée'],
   },
 ];
 
 export default function Features() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="fonctionnalites">
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <div className={styles.badge}>
-            <Sparkles size={16} />
-            Fonctionnalités
-          </div>
-          <h2 className={styles.title}>Tout ce qu'il vous faut</h2>
+          <span className={styles.badge}>Fonctionnalités</span>
+          <h2 className={styles.title}>
+            Tout ce dont vous avez besoin pour <span className={styles.highlight}>réussir</span>
+          </h2>
           <p className={styles.description}>
-            Konkon offre une expérience complète pour les locataires, propriétaires et démarcheurs
+            Une suite complète d'outils pour locataires, propriétaires et démarcheurs.
           </p>
         </div>
 
@@ -59,6 +64,14 @@ export default function Features() {
               </div>
               <h3 className={styles.featureTitle}>{feature.title}</h3>
               <p className={styles.featureDescription}>{feature.description}</p>
+              <ul className={styles.itemsList}>
+                {feature.items.map((item) => (
+                  <li key={item} className={styles.item}>
+                    <Check className={styles.checkIcon} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

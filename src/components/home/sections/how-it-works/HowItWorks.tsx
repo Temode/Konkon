@@ -1,56 +1,49 @@
-import { Search, MessageSquare, Calendar, CreditCard, ChevronRight, Lightbulb } from 'lucide-react';
+import { Search, MessageCircle, Home, CreditCard, ChevronRight } from 'lucide-react';
 import styles from './HowItWorks.module.css';
 
 const steps = [
   {
-    number: '01',
     icon: Search,
-    title: 'Rechercher',
-    description: 'Trouvez votre bien idéal parmi nos milliers d\'annonces vérifiées',
+    title: 'Recherchez',
+    description: 'Explorez des milliers d\'annonces avec filtres, carte et photos HD. Sauvegardez vos favoris.',
   },
   {
-    number: '02',
-    icon: MessageSquare,
-    title: 'Contacter',
-    description: 'Échangez directement avec des démarcheurs vérifiés et de confiance',
+    icon: MessageCircle,
+    title: 'Contactez',
+    description: 'Discutez directement avec le démarcheur vérifié via notre messagerie sécurisée.',
   },
   {
-    number: '03',
-    icon: Calendar,
-    title: 'Visiter',
-    description: 'Planifiez vos visites facilement depuis la plateforme',
+    icon: Home,
+    title: 'Visitez',
+    description: 'Planifiez et effectuez votre visite. Vérifiez le bien en personne avant de vous engager.',
   },
   {
-    number: '04',
     icon: CreditCard,
-    title: 'Payer',
-    description: 'Réglez en toute sécurité avec notre système de paiement protégé',
+    title: 'Payez',
+    description: 'Payez en toute sécurité via Orange Money. Recevez votre reçu PDF automatiquement.',
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="comment-ca-marche">
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <div className={styles.badge}>
-            <Lightbulb size={16} />
-            Comment ça marche
-          </div>
+          <span className={styles.badge}>Comment ça marche</span>
           <h2 className={styles.title}>
-            Trouvez votre logement en 4 étapes
+            Trouvez et payez votre logement en <span className={styles.highlight}>4 étapes simples</span>
           </h2>
           <p className={styles.description}>
-            Un processus simple et sécurisé pour trouver et louer votre prochain logement
+            De la recherche au paiement, Konkon simplifie chaque étape de votre parcours immobilier.
           </p>
         </div>
 
         {/* Steps Grid */}
         <div className={styles.stepsGrid}>
           {steps.map((step, index) => (
-            <div key={step.number} className={styles.stepCard}>
-              <span className={styles.stepNumber}>{step.number}</span>
+            <div key={step.title} className={styles.stepCard}>
+              <div className={styles.stepNumber}>{index + 1}</div>
 
               <div className={styles.stepIcon}>
                 <step.icon />
