@@ -1,64 +1,66 @@
-import { Star, MessageCircle } from 'lucide-react';
+import { Star } from 'lucide-react';
 import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    id: 1,
-    name: 'Fatoumata Diallo',
-    role: 'Locataire à Kipé',
-    rating: 5,
-    content:
-      "J'ai trouvé mon appartement en moins d'une semaine grâce à Konkon. Les démarcheurs sont professionnels et réactifs. Je recommande vivement cette plateforme !",
+    content: "J'ai trouvé mon appartement en 3 jours ! Le démarcheur était vérifié et le paiement via Orange Money m'a rassuré. Plus besoin de transporter du cash.",
+    name: 'Aissatou Barry',
+    role: 'Locataire, Conakry',
+    initials: 'AB',
+    gradient: 'from-primary-100 to-accent-cyan/20',
+    textColor: 'text-primary-600',
   },
   {
-    id: 2,
-    name: 'Mamadou Sow',
-    role: 'Démarcheur à Conakry',
-    rating: 5,
-    content:
-      'Konkon a révolutionné ma façon de travailler. Je gère maintenant toutes mes annonces depuis un seul endroit et mes clients me trouvent facilement.',
+    content: "En tant que démarcheur, le badge vérifié m'a permis de gagner la confiance de mes clients. Mes revenus ont augmenté de 40% depuis que j'utilise Konkon.",
+    name: 'Mamadou Diallo',
+    role: 'Démarcheur Pro, Ratoma',
+    initials: 'MD',
+    gradient: 'from-amber-100 to-red-100',
+    textColor: 'text-amber-600',
   },
   {
-    id: 3,
-    name: 'Aissatou Bah',
-    role: 'Propriétaire à Lambanyi',
-    rating: 5,
-    content:
-      'Excellente expérience ! J\'ai loué ma villa en quelques jours. Le système de paiement sécurisé me donne une totale confiance.',
+    content: "Depuis Paris, je gère 3 appartements à Conakry. Les reçus automatiques et le suivi des paiements me facilitent énormément la vie. Merci Konkon !",
+    name: 'Fatoumata Sylla',
+    role: 'Propriétaire, Diaspora',
+    initials: 'FS',
+    gradient: 'from-purple-100 to-blue-100',
+    textColor: 'text-purple-600',
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="temoignages">
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <div className={styles.badge}>
-            <MessageCircle size={16} />
-            Témoignages
-          </div>
-          <h2 className={styles.title}>Ce que disent nos utilisateurs</h2>
+          <span className={styles.badge}>Témoignages</span>
+          <h2 className={styles.title}>
+            Ce que disent nos <span className={styles.highlight}>utilisateurs</span>
+          </h2>
+          <p className={styles.description}>
+            Des milliers de personnes font confiance à Konkon pour leurs transactions immobilières.
+          </p>
         </div>
 
         {/* Testimonials Grid */}
         <div className={styles.grid}>
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className={styles.card}>
+            <div key={testimonial.name} className={styles.card}>
               {/* Rating Stars */}
               <div className={styles.rating}>
-                {[...Array(testimonial.rating)].map((_, i) => (
+                {[...Array(5)].map((_, i) => (
                   <Star key={i} className={styles.star} />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className={styles.quote}>{testimonial.content}</p>
+              <p className={styles.quote}>"{testimonial.content}"</p>
 
               {/* Author */}
               <div className={styles.author}>
-                <div className={styles.avatar}>
-                  {testimonial.name.charAt(0)}
+                <div className={`${styles.avatar} ${styles[testimonial.gradient]}`}>
+                  <span className={styles[testimonial.textColor]}>{testimonial.initials}</span>
                 </div>
                 <div className={styles.authorInfo}>
                   <p className={styles.authorName}>{testimonial.name}</p>

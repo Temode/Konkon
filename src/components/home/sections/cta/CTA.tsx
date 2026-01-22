@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { UserPlus, Search } from 'lucide-react';
+import { Rocket, PlayCircle } from 'lucide-react';
 import styles from './CTA.module.css';
 
 export default function CTA() {
@@ -14,21 +14,21 @@ export default function CTA() {
           {/* Content */}
           <div className={styles.content}>
             <h2 className={styles.title}>
-              Prêt à trouver votre logement idéal ?
+              Prêt à transformer votre expérience immobilière ?
             </h2>
             <p className={styles.description}>
-              Rejoignez des milliers d'utilisateurs satisfaits et trouvez votre prochain chez-vous en toute confiance.
+              Rejoignez des milliers d'utilisateurs qui font confiance à Konkon pour leurs transactions immobilières en Guinée.
             </p>
 
             {/* Buttons */}
             <div className={styles.buttons}>
               <Link to="/inscription" className={styles.primaryButton}>
-                <UserPlus />
-                Créer un compte gratuit
+                <Rocket />
+                Commencer gratuitement
               </Link>
               <Link to="/recherche" className={styles.secondaryButton}>
-                <Search />
-                Parcourir les annonces
+                <PlayCircle />
+                Voir la démo
               </Link>
             </div>
           </div>
